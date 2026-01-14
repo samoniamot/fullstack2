@@ -4,7 +4,7 @@ import { useState } from 'react';
 function TarjetaProducto({ libro, agregarAlCarrito }) {
   const [cantidad, setCantidad] = useState(1);
 
-  // funcion para aumentar cantidad
+  // fucnino para aumentar cantidad
   function aumentar() {
     setCantidad(cantidad + 1);
   }
@@ -16,7 +16,7 @@ function TarjetaProducto({ libro, agregarAlCarrito }) {
     }
   }
 
-  // funcion para agregar al carrito
+  // fincoin para agregar al carrito
   function manejarAgregar() {
     agregarAlCarrito(libro, cantidad);
     setCantidad(1);
@@ -35,6 +35,7 @@ function TarjetaProducto({ libro, agregarAlCarrito }) {
       <h5 className="titulo-producto">{libro.titulo}</h5>
       <p className="autor-producto">por {libro.autor}</p>
       <p className="precio-producto">${libro.precio.toLocaleString()}</p>
+      <p className="stock-producto">stock: {libro.stock}</p>
       <p className="text-muted small">{libro.descripcion}</p>
       
       <div className="control-cantidad">

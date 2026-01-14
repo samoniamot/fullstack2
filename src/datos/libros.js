@@ -6,7 +6,8 @@ const libros = [
     autor: "antoine de saint-exupery",
     precio: 12990,
     imagen: "/libro1.webp",
-    descripcion: "un clasico de la literatura universal sobre un pequeno principe"
+    descripcion: "un clasico de la literatura universal sobre un pequeno principe",
+    stock: 100
   },
   {
     id: 2,
@@ -14,7 +15,8 @@ const libros = [
     autor: "gabriel garcia marquez",
     precio: 15990,
     imagen: "/libro2.webp",
-    descripcion: "la historia de la familia buendia en macondo"
+    descripcion: "la historia de la familia buendia en macondo",
+    stock: 100
   },
   {
     id: 3,
@@ -22,7 +24,8 @@ const libros = [
     autor: "miguel de cervantes",
     precio: 18990,
     imagen: "/libro3.webp",
-    descripcion: "las aventuras del ingenioso hidalgo"
+    descripcion: "las aventuras del ingenioso hidalgo",
+    stock: 100
   },
   {
     id: 4,
@@ -30,7 +33,8 @@ const libros = [
     autor: "j.k. rowling",
     precio: 14990,
     imagen: "/libro4.webp",
-    descripcion: "el inicio de la saga del mago mas famoso"
+    descripcion: "el inicio de la saga del mago mas famoso",
+    stock: 100
   },
   {
     id: 5,
@@ -38,7 +42,8 @@ const libros = [
     autor: "george orwell",
     precio: 11990,
     imagen: "/libro5.webp",
-    descripcion: "una novela distopica sobre el control totalitario"
+    descripcion: "una novela distopica sobre el control totalitario",
+    stock: 100
   },
   {
     id: 6,
@@ -46,7 +51,8 @@ const libros = [
     autor: "j.r.r. tolkien",
     precio: 22990,
     imagen: "/libro6.webp",
-    descripcion: "la epica aventura de frodo y el anillo"
+    descripcion: "la epica aventura de frodo y el anillo",
+    stock: 100
   },
   {
     id: 7,
@@ -54,7 +60,8 @@ const libros = [
     autor: "jane austen",
     precio: 13990,
     imagen: "/libro7.webp",
-    descripcion: "una historia de amor en la inglaterra del siglo xix"
+    descripcion: "una historia de amor en la inglaterra del siglo xix",
+    stock: 100
   },
   {
     id: 8,
@@ -62,7 +69,8 @@ const libros = [
     autor: "fiodor dostoievski",
     precio: 16990,
     imagen: "/libro8.webp",
-    descripcion: "la historia de raskolnikov y su dilema moral"
+    descripcion: "la historia de raskolnikov y su dilema moral",
+    stock: 100
   },
   {
     id: 9,
@@ -70,7 +78,8 @@ const libros = [
     autor: "paulo coelho",
     precio: 12490,
     imagen: "/libro1.webp",
-    descripcion: "un joven pastor en busca de su leyenda personal"
+    descripcion: "un joven pastor en busca de su leyenda personal",
+    stock: 100
   },
   {
     id: 10,
@@ -78,7 +87,8 @@ const libros = [
     autor: "carlos ruiz zafon",
     precio: 17990,
     imagen: "/libro2.webp",
-    descripcion: "un misterio en la barcelona de posguerra"
+    descripcion: "un misterio en la barcelona de posguerra",
+    stock: 100
   }
 ];
 

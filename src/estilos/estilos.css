@@ -48,6 +48,11 @@
   margin-top: 10px;
 }
 
+.stock-producto {
+  font-size: 0.9rem;
+  color: #e74c3c;
+}
+
 .header-tienda {
   background-color: #f8f9fa;
   padding: 15px 0;
