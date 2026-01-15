@@ -1,5 +1,5 @@
 // pagina del carrito de compras
-function Carrito({ carrito, vaciarCarrito }) {
+function Carrito({ carrito, vaciarCarrito, realizarCompra, usuarioActual }) {
   // calcular total
   let total = 0;
   for (let i = 0; i < carrito.length; i++) {
@@ -21,9 +21,9 @@ function Carrito({ carrito, vaciarCarrito }) {
     <div className="container mt-4">
       <h2 className="mb-4">tu carrito</h2>
       
-      {carrito.map(function(item) {
+      {carrito.map(function(item, indice) {
         return (
-          <div className="item-carrito row" key={item.id}>
+          <div className="item-carrito row mb-3 p-2" key={indice} style={{border: '1px solid #ddd', borderRadius: '5px'}}>
             <div className="col-md-2">
               <img 
                 src={item.imagen} 
@@ -39,7 +39,7 @@ function Carrito({ carrito, vaciarCarrito }) {
               <p>cantidad: {item.cantidad}</p>
             </div>
             <div className="col-md-3">
-              <p>${item.precio * item.cantidad}</p>
+              <p><strong>${item.precio * item.cantidad}</strong></p>
             </div>
           </div>
         );
@@ -48,14 +48,23 @@ function Carrito({ carrito, vaciarCarrito }) {
       <hr />
       
       <div className="row mt-4">
-        <div className="col-md-8">
+        <div className="col-md-6">
           <button className="btn btn-secondary" onClick={vaciarCarrito}>
             vaciar carrito
           </button>
         </div>
-        <div className="col-md-4 text-end">
-          <p>total: ${total}</p>
-          <button className="btn btn-success btn-lg">proceder al pago</button>
+        <div className="col-md-6 text-end">
+          <h4>total: ${total}</h4>
+          {usuarioActual ? (
+            <button className="btn btn-success btn-lg mt-2" onClick={realizarCompra}>
+              confirmar compra
+            </button>
+          ) : (
+            <div>
+              <p className="text-muted">debes iniciar sesion para comprar</p>
+              <a href="/login" className="btn btn-primary">iniciar sesion</a>
+            </div>
+          )}
         </div>
       </div>
     </div>

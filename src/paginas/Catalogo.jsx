@@ -1,11 +1,10 @@
 // pagina de catalogo completo
 import TarjetaProducto from '../componentes/TarjetaProducto';
-import libros from '../datos/libros';
 
-function Catalogo({ agregarAlCarrito }) {
+function Catalogo({ libros, agregarAlCarrito }) {
   return (
     <div className="container mt-4">
-      <h2 className="mb-4">Catalogo de libros</h2>
+      <h2 className="mb-4">catalogo de libros</h2>
       <p className="text-muted">explora nuestra coleccion de {libros.length} libros</p>
       
       <div className="row">

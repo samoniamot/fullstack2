@@ -1,19 +1,29 @@
 // pagina de inicio
 import TarjetaProducto from '../componentes/TarjetaProducto';
-import libros from '../datos/libros';
 
-function Inicio({ agregarAlCarrito }) {
+function Inicio({ libros, agregarAlCarrito }) {
   // mostrar solo los primeros 4 libros en inicio
-  const librosDestacados = libros.slice(0, 4);
+  let librosDestacados = [];
+  for (let i = 0; i < 4 && i < libros.length; i++) {
+    librosDestacados.push(libros[i]);
+  }
 
   return (
     <div>
-      {/* banner principal */}
-      <section className="banner-principal">
-        <div className="container">
-          <h1>Bienvenido a libreria online</h1>
-          <p>Encuentra los mejores libros al mejor precio</p>
-          <a href="/catalogo" className="btn btn-light btn-lg mt-3">Ver catalogo</a>
+      {/* banner principal con imagen de fondo */}
+      <section style={{
+        backgroundImage: 'url(/banner-fondo.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        minHeight: '400px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}>
+        <div className="container text-center" style={{backgroundColor: 'rgba(0,0,0,0.5)', padding: '40px', borderRadius: '10px'}}>
+          <h1 style={{color: 'white', fontSize: '2.5rem'}}>bienvenido a libreria online</h1>
+          <p style={{color: 'white', fontSize: '1.2rem'}}>encuentra los mejores libros al mejor precio</p>
+          <a href="/catalogo" className="btn btn-light btn-lg mt-3">ver catalogo</a>
         </div>
       </section>
 

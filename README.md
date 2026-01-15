@@ -1,78 +1,118 @@
-Proyecto LIBRERIA ANTARTICA
+# Libreria antartica
 
-Tienda online de Libros basada en: html5, css y javascript puro.
+tienda online de libros hecha con html5, css y javascript. proyecto para la asignatura desarrollo fullstack ii.
 
-paginas principales:
+## como ejecutar
 
+```bash
+npm install
+npm run dev
+npm run test
+```
 
--inicio: muestra un banner principal con fondo y boton con algunos libros destacados y información sobre envío, pago y garantía
--catalogo: lista completa de 8 libros disponibles con imagen, título, autor y precio
--carrito: muestra los libros agregados al carrito con la opción de modificar cantidades
--contacto: formulario para que los usuarios se comuniquen
--login: sistema de autenticación para usuarios cliente y administrador
+## paginas principales
 
+- **inicio**: banner con imagen de fondo, libros destacados e info de envio y garantia
+- **catalogo**: lista de 8 libros con imagen, titulo, autor, precio y stock
+- **carrito**: productos agregados con opcion de confirmar compra
+- **contacto**: formulario basico de contacto
+- **login**: para entrar como cliente o admin
+- **registro**: para crear cuenta nueva
+- **admin**: panel para gestionar productos y pedidos (solo admins)
 
+## usuarios de prueba
 
-usuarios
-el proyecto tiene dos tipos de usuario hardcodeados:
+| tipo | correo | contrasena |
+|------|--------|------------|
+| cliente | cliente@tienda.com | cliente123 |
+| admin | admin@tienda.com | admin123 |
 
-usuario cliente:
+## funcionalidades
 
-correo: cliente@tienda.com
-contraseña: cliente123
+### carrito
+- agregar libros con selector de cantidad
+- ver total de la compra
+- confirmar compra (crea un pedido)
+- carrito se guarda en localstorage
 
+### sesion de usuario
+- login con validacion basica
+- registro de usuarios nuevos
+- sesion persiste al recargar la pagina
+- cierre de sesion limpia carrito
 
-usuario administrador:
-correo: admin@tienda.com
-contraseña: admin123
+### panel de admin
+- ver tabla de productos
+- agregar nuevos libros
+- editar libros existentes
+- eliminar libros
+- ver pedidos de clientes
+- cambiar estado de pedidos (nueva orden, entregado, cancelada)
 
+## pruebas unitarias
 
+el proyecto tiene 10 pruebas con vitest:
 
-Aspectos tecnicos:
+1. debe tener libros en el array
+2. cada libro debe tener un id
+3. cada libro debe tener precio
+4. cada libro debe tener stock
+5. debe existir un usuario admin
+6. cada usuario debe tener correo
+7. cada usuario debe tener contrasena
+8. el correo debe contener @
+9. la contrasena debe tener minimo 6 caracteres
+10. el precio debe ser un numero
 
--agregar libros al carrito con selector de cantidad
--carrito persiste en la sesión del usuario
--validación basica de login con mensajes de error
--interfaz responsive con bootstrap
--8 libros diferentes con imágenes locales
+para correr las pruebas:
+```bash
+npm run test
+```
 
+## estructura del proyecto
 
-Estructura visual:
+```
 tienda-libros/
 ├── src/
 │   ├── componentes/
-│   │   ├── Encabezado.jsx (header con navegación y carrito)
-│   │   ├── TarjetaProducto.jsx (componente reutilizable de producto)
-│   │   └── PiePagina.jsx (footer)
+│   │   ├── Encabezado.jsx
+│   │   ├── TarjetaProducto.jsx
+│   │   └── PiePagina.jsx
 │   ├── paginas/
-│   │   ├── Inicio.jsx (homepage con banner)
-│   │   ├── Catalogo.jsx (lista de libros)
-│   │   ├── Carrito.jsx (resumen del carrito)
-│   │   ├── Contacto.jsx (formulario)
-│   │   ├── Login.jsx (autenticación)
-│   │   └── Admin.jsx (panel solo para admins)
+│   │   ├── Inicio.jsx
+│   │   ├── Catalogo.jsx
+│   │   ├── Carrito.jsx
+│   │   ├── Contacto.jsx
+│   │   ├── Login.jsx
+│   │   ├── Registro.jsx
+│   │   └── Admin.jsx
 │   ├── datos/
-│   │   ├── libros.js (array con 8 libros hardcodeados)
-│   │   └── usuarios.js (usuarios demo)
+│   │   ├── libros.js
+│   │   └── usuarios.js
 │   ├── estilos/
-│   │   └── estilos.css (estilos personalizados)
-│   ├── App.jsx (componente principal)
-│   └── main.jsx (punto de entrada)
+│   │   └── estilos.css
+│   ├── pruebas/
+│   │   └── pruebas.test.js
+│   ├── App.jsx
+│   └── main.jsx
 ├── public/
-│   ├── libro1.webp a libro8.webp (imágenes de libros)
-│   └── logo_app.webp (logo de la tienda)
+│   ├── libro1.webp a libro8.webp
+│   ├── logo_app.webp
+│   └── banner-fondo.jpg
 └── package.json
+```
 
-Stack tecnologico:
-React
-Vite 
-Bootstrap
-React-router
-Javascript 
+## tecnologias
 
+- react 19
+- vite 7
+- bootstrap 5
+- react-router 7
+- vitest (testing)
 
-NOTAS:
-Todos los datos están hardcodeados (sin base de datos)
-sin backend, toda la lógica está en el frontend
-carrito almacenado en estado de react
-validaciones básicas de login con javascript puro
+## notas
+
+- todos los datos estan hardcodeados sin base de datos
+- no hay backend, todo es frontend
+- carrito y sesion se guardan en localstorage
+- validaciones basicas con javascript puro

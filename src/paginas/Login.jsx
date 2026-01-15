@@ -1,8 +1,7 @@
 // pagina de login
 import { useState } from 'react';
-import usuarios from '../datos/usuarios';
 
-function Login({ iniciarSesion }) {
+function Login({ iniciarSesion, usuarios }) {
   const [correo, setCorreo] = useState('');
   const [contrasena, setContrasena] = useState('');
   const [errores, setErrores] = useState({});
@@ -43,12 +42,12 @@ function Login({ iniciarSesion }) {
     evento.preventDefault();
     setMensajeExito('');
 
-    // validar formulario
+    //validacion basica formulario
     if (!validarFormulario()) {
       return;
     }
 
-    // buscar usuario
+    // buscar al usuario
     let usuarioEncontrado = null;
     for (let i = 0; i < usuarios.length; i++) {
       if (usuarios[i].correo === correo && usuarios[i].contrasena === contrasena) {
@@ -113,6 +112,10 @@ function Login({ iniciarSesion }) {
           <p><strong>usuarios de tetsing:</strong></p>
           <p>admin: admin@tienda.com / admin123</p>
           <p>cliente: cliente@tienda.com / cliente123</p>
+        </div>
+
+        <div className="text-center mt-3">
+          <p>no tienes cuenta? <a href="/registro">registrate aqui</a></p>
         </div>
       </div>
     </div>
